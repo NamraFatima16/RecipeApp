@@ -1,118 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AddingRecipesActivity">
+    tools:context="ie.setu.recipeapp.activities.ListRecipeActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="412dp"
-        android:layout_height="734dp">
-
-
-
-
-    <TextView
-        android:id="@+id/recipeTitle"
-        android:layout_width="218dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="648dp"
-        android:text="Dish Name"
-        android:textAlignment="center"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+          <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/recipeTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:hint="Recipe title"
+                    android:textAlignment="center"/>
+
+                <EditText
+                    android:id="@+id/serving"
+                    android:layout_width="261dp"
+                    android:layout_height="48dp"
+                    android:hint="Servings" />
+
+                <EditText
+                    android:id="@+id/cookingTime"
+                    android:layout_width="261dp"
+                    android:layout_height="48dp"
+                    android:hint="Cooking Time" />
+
+                <EditText
+                    android:id="@+id/cost"
+                    android:layout_width="261dp"
+                    android:layout_height="48dp"
+                    android:hint="Estimated Cost" />
+
+                <EditText
+                    android:id="@+id/numOfIng"
+                    android:layout_width="261dp"
+                    android:layout_height="48dp"
+                    android:hint="Number of ingredients" />
+
+                <EditText
+                    android:id="@+id/recipeDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="161dp"
+                    android:hint="Description" />
+
+                <EditText
+                    android:id="@+id/recipe"
+                    android:layout_width="match_parent"
+                    android:layout_height="256dp"
+                    android:hint="Recipe" />
+
+                <Button
+                    android:id="@+id/addrecipetoarray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add recipe" />
 
 
-        <TextView
-            android:id="@+id/descriptionBox"
-            android:layout_width="400dp"
-            android:layout_height="163dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="3dp"
-            android:layout_marginBottom="18dp"
-            android:text="Description"
-            app:layout_constraintBottom_toTopOf="@+id/numberOfIngredients"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipeTitle" />
-
-        <TextView
-        android:id="@+id/numberOfIngredients"
-        android:layout_width="202dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="203dp"
-        android:layout_marginBottom="15dp"
-        android:text="Number of ingredients:"
-        app:layout_constraintBottom_toTopOf="@+id/servings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionBox" />
-
-    <TextView
-        android:id="@+id/servings"
-        android:layout_width="203dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="202dp"
-        android:layout_marginBottom="13dp"
-        android:text="servings"
-        app:layout_constraintBottom_toTopOf="@+id/costOfingredients"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberOfIngredients" />
-
-    <TextView
-        android:id="@+id/cookingTime"
-        android:layout_width="203dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="202dp"
-        android:layout_marginBottom="160dp"
-        android:text="Cooking Time"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/costOfingredients" />
-
-    <TextView
-        android:id="@+id/costOfingredients"
-        android:layout_width="203dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="202dp"
-        android:layout_marginBottom="13dp"
-        android:text="Estimated Cost"
-        app:layout_constraintBottom_toTopOf="@+id/cookingTime"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/servings" />
-
-        <TextView
-            android:id="@+id/recipe"
-            android:layout_width="405dp"
-            android:layout_height="125dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="1dp"
-            android:text="Recipe"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cookingTime" />
+            </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
-</ScrollView>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
