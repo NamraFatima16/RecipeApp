@@ -23,7 +23,6 @@
                   android:layout_height="wrap_content"
                   android:orientation="vertical"
                   android:padding="10dp">
-
                   <EditText
                       android:id="@+id/recipeTitle"
                       android:layout_width="match_parent"
@@ -31,42 +30,109 @@
                       android:hint="Recipe title"
                       android:textAlignment="center"/>
 
-
-
-                  <EditText
-                      android:id="@+id/editTextTextPersonName3"
-                      android:layout_width="72dp"
-                      android:layout_height="wrap_content"
-                      android:ems="10"
-                      android:inputType="textPersonName"
-                      android:text="Serving:"
-
-                      />
-
-
-                  <EditText
-                      android:id="@+id/serving"
-                      android:layout_width="261dp"
+                  <LinearLayout
+                      android:layout_width="match_parent"
                       android:layout_height="48dp"
-                      android:hint="Servings" />
+                      android:orientation="horizontal">
+
+
+                      <TextView
+                          android:id="@+id/servingtext"
+                          android:layout_width="132dp"
+                          android:layout_height="match_parent"
+                          android:ems="10"
+                          android:gravity="center"
+                          android:inputType="textPersonName"
+                          android:text="Servings: "
+                          android:textAlignment="center"
+                          android:textSize="18sp"
+
+                          />
+
+
+                      <EditText
+                          android:id="@+id/serving"
+                          android:layout_width="184dp"
+                          android:layout_height="match_parent"
+                          android:hint="Servings"
+                          android:inputType="number"/>
+
+                  </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="48dp"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:id="@+id/cookingtimetext"
+                      android:layout_width="133dp"
+                      android:layout_height="match_parent"
+                      android:ems="10"
+                      android:gravity="center"
+                      android:text="Cooking Time: "
+                      android:textAlignment="center"
+                      android:textSize="18sp" />
 
                   <EditText
                       android:id="@+id/cookingTime"
-                      android:layout_width="261dp"
-                      android:layout_height="48dp"
-                      android:hint="Cooking Time" />
+                      android:layout_width="183dp"
+                      android:layout_height="match_parent"
+                      android:hint="Cooking Time"
+                      android:inputType="number"/>
+
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="48dp"
+                  android:orientation="horizontal">
+
+                  <TextView
+                  android:id="@+id/estimatedcosttext"
+                  android:layout_width="133dp"
+                  android:layout_height="match_parent"
+                  android:ems="10"
+                  android:gravity="center"
+                  android:text="Estimated Cost: "
+                  android:textAlignment="center"
+                  android:textSize="18sp" />
 
                   <EditText
                       android:id="@+id/cost"
-                      android:layout_width="261dp"
-                      android:layout_height="48dp"
-                      android:hint="Estimated Cost" />
+                      android:layout_width="184dp"
+                      android:layout_height="match_parent"
+                      android:hint="Estimated Cost"
+                      android:inputType="numberDecimal"/>
 
-                  <EditText
-                      android:id="@+id/numOfIng"
-                      android:layout_width="261dp"
-                      android:layout_height="48dp"
-                      android:hint="Number of ingredients" />
+
+              </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal">
+
+                      <TextView
+                          android:id="@+id/numofingtext"
+                          android:layout_width="133dp"
+                          android:layout_height="match_parent"
+                          android:ems="10"
+                          android:gravity="center"
+                          android:text="Number of Ingredients : "
+                          android:textAlignment="center"
+                          android:textSize="18sp" />
+
+
+                      <EditText
+                          android:id="@+id/numOfIng"
+                          android:layout_width="wrap_content"
+                          android:layout_height="match_parent"
+                          android:hint="Number of Ingredients"
+                          android:inputType="number"/>
+                  </LinearLayout>
 
                   <EditText
                       android:id="@+id/recipeDescription"
@@ -85,6 +151,12 @@
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:text="Add recipe" />
+
+                  <Button
+                      android:id="@+id/cancelRecipe"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Cancel" />
 
 
               </LinearLayout>

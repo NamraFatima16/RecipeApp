@@ -27,35 +27,135 @@ class AddingRecipesActivity : AppCompatActivity() {
         i("adding recipe started..")
         binding1.addrecipetoarray.setOnClickListener() {
 
+            i("Add Button Pressed....")
 
 
-            recipe.title = binding1.recipeTitle.text.toString()
-            recipe.description = binding1.recipeDescription.text.toString()
-            recipe.servings = binding1.serving.text.toString().toInt()
-            recipe.cookingTime = binding1.cookingTime.text.toString().toInt()
-            recipe.estimatedCost = binding1.cost.text.toString().toDouble()
-            recipe.numberOfIngeredients = binding1.numOfIng.text.toString().toInt()
-            recipe.recipe = binding1.recipe.text.toString()
+             var isError = false
 
 
 
+            if(binding1.recipeTitle.text.toString().isNotEmpty()){
+                recipe.title = binding1.recipeTitle.text.toString()
+            }
+            else{
+                isError = true
+                Snackbar.make(it, "Please Enter a title", Snackbar.LENGTH_LONG)
+                    .show()
 
-            //need more checks
-            if (recipe.title.isNotEmpty()) {
+            }
+
+            if(binding1.recipeDescription.text.toString().isNotEmpty()){
+                recipe.description = binding1.recipeDescription.text.toString()
+            }
+            else{
+                isError = true
+                Snackbar.make(it, "Please Enter a Description", Snackbar.LENGTH_LONG)
+                    .show()
+
+            }
+            if(binding1.recipe.text.toString().isNotEmpty()){
+                recipe.recipe = binding1.recipe.text.toString()
+            }
+            else{
+                isError = true
+                Snackbar.make(it, "Please Enter a Recipe", Snackbar.LENGTH_LONG)
+                    .show()
+
+            }
+            if(binding1.serving.text.toString().isNotEmpty()  ){
+                try {
+                    recipe.servings = binding1.serving.text.toString().toInt()
+                }
+                catch (e: NumberFormatException ){
+                    isError = true
+                    Snackbar.make(it,"Not a Number",Snackbar.LENGTH_LONG)
+                        .show()
+                }
+
+            }
+            else{
+                isError = true
+                Snackbar.make(it, "Please Enter a Serving number", Snackbar.LENGTH_LONG)
+                    .show()
+
+            }
+
+
+            if(binding1.cookingTime.text.toString().isNotEmpty()  ){
+                try {
+                    recipe.cookingTime = binding1.cookingTime.text.toString().toInt()
+                }
+                catch (e: NumberFormatException ){
+                    isError = true
+                    Snackbar.make(it,"Not a Number",Snackbar.LENGTH_LONG)
+                        .show()
+                }
+
+            }
+            else{
+                isError = true
+                Snackbar.make(it, "Please Enter a Cooking Time", Snackbar.LENGTH_LONG)
+                    .show()
+
+            }
+
+            if(binding1.numOfIng.text.toString().isNotEmpty()  ){
+                try {
+                    recipe.numberOfIngeredients = binding1.numOfIng.text.toString().toInt()
+                }
+                catch (e: NumberFormatException ){
+                    isError = true
+                    Snackbar.make(it,"Not a Number",Snackbar.LENGTH_LONG)
+                        .show()
+                }
+
+            }
+            else{
+                isError = true
+                Snackbar.make(it, "Please Enter Number Of Ingredients", Snackbar.LENGTH_LONG)
+                    .show()
+
+            }
+
+            if(binding1.cost.text.toString().isNotEmpty()  ){
+                try {
+                    recipe.estimatedCost = binding1.cost.text.toString().toDouble()
+                }
+                catch (e: NumberFormatException ){
+                    isError = true
+                    Snackbar.make(it,"Not a Number",Snackbar.LENGTH_LONG)
+                        .show()
+                }
+
+            }
+            else{
+                isError = true
+                Snackbar.make(it, "Please Enter the Cost", Snackbar.LENGTH_LONG)
+                    .show()
+
+            }
+
+            if (!isError ) {
+
                 app1.recipes.add(recipe.copy())
-                i("Add button pressed: ${recipe}")
+                i("Recipe Added: ${recipe}")
 
                 for (i in app1.recipes.indices) {
                     i("Recipe[$i]:${this.app1.recipes[i]}")
                 }
-            } else {
-                Snackbar.make(it, "Please Enter a title", Snackbar.LENGTH_LONG)
-                    .show()
+                setResult(RESULT_OK)
+                finish()
             }
-            val launchHome = Intent(this, RecipeAppActivity::class.java)
-            startActivity(launchHome)
-
 
         }
+
+        binding1.cancelRecipe.setOnClickListener(){
+
+            val launcherCancel =  Intent(this,RecipeAppActivity::class.java)
+            startActivity(launcherCancel)
+        }
+
+
+
     }
 }
