@@ -1,7 +1,12 @@
 package ie.setu.recipeapp.models
 
 data class RecipeModel(var title: String = "",
-                        var description: String = ""
+                        var description: String = "",
+                       var servings: Int = 0,
+                       var cookingTime: Int = 0,
+                       var estimatedCost: Double = 0.0,
+                       var numberOfIngeredients: Int = 0,
+                       var recipe: String = ""
 )
 //var title: String = "",
 //var description: String = "",

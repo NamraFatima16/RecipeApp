@@ -13,8 +13,8 @@
         android:name="ie.setu.recipeapp.main.MainApp"
         tools:targetApi="31">
         <activity
-            android:name=".activities.AddingRecipesActivity"
-            android:exported="false" />
+            android:name=".activities.AddingRecipesActivity" />
+        <activity android:name=".activities.ListRecipeActivity"/>
         <activity
             android:name=".activities.RecipeAppActivity"
             android:exported="true">

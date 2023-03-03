@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ie.setu.recipeapp.activities.ListRecipeActivity">
+    tools:context="ie.setu.recipeapp.activities.AddingRecipesActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,62 +18,82 @@
             android:layout_height="match_parent"
             android:fillViewport="true">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:padding="10dp">
 
-                <EditText
-                    android:id="@+id/recipeTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="68dp"
-                    android:hint="Recipe title"
-                    android:textAlignment="center"/>
-
-                <EditText
-                    android:id="@+id/serving"
-                    android:layout_width="261dp"
-                    android:layout_height="48dp"
-                    android:hint="Servings" />
-
-                <EditText
-                    android:id="@+id/cookingTime"
-                    android:layout_width="261dp"
-                    android:layout_height="48dp"
-                    android:hint="Cooking Time" />
-
-                <EditText
-                    android:id="@+id/cost"
-                    android:layout_width="261dp"
-                    android:layout_height="48dp"
-                    android:hint="Estimated Cost" />
-
-                <EditText
-                    android:id="@+id/numOfIng"
-                    android:layout_width="261dp"
-                    android:layout_height="48dp"
-                    android:hint="Number of ingredients" />
-
-                <EditText
-                    android:id="@+id/recipeDescription"
-                    android:layout_width="match_parent"
-                    android:layout_height="161dp"
-                    android:hint="Description" />
-
-                <EditText
-                    android:id="@+id/recipe"
-                    android:layout_width="match_parent"
-                    android:layout_height="256dp"
-                    android:hint="Recipe" />
-
-                <Button
-                    android:id="@+id/addrecipetoarray"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Add recipe" />
+                  <EditText
+                      android:id="@+id/recipeTitle"
+                      android:layout_width="match_parent"
+                      android:layout_height="68dp"
+                      android:hint="Recipe title"
+                      android:textAlignment="center"/>
 
 
-            </LinearLayout>
+
+                  <EditText
+                      android:id="@+id/editTextTextPersonName3"
+                      android:layout_width="72dp"
+                      android:layout_height="wrap_content"
+                      android:ems="10"
+                      android:inputType="textPersonName"
+                      android:text="Serving:"
+
+                      />
+
+
+                  <EditText
+                      android:id="@+id/serving"
+                      android:layout_width="261dp"
+                      android:layout_height="48dp"
+                      android:hint="Servings" />
+
+                  <EditText
+                      android:id="@+id/cookingTime"
+                      android:layout_width="261dp"
+                      android:layout_height="48dp"
+                      android:hint="Cooking Time" />
+
+                  <EditText
+                      android:id="@+id/cost"
+                      android:layout_width="261dp"
+                      android:layout_height="48dp"
+                      android:hint="Estimated Cost" />
+
+                  <EditText
+                      android:id="@+id/numOfIng"
+                      android:layout_width="261dp"
+                      android:layout_height="48dp"
+                      android:hint="Number of ingredients" />
+
+                  <EditText
+                      android:id="@+id/recipeDescription"
+                      android:layout_width="match_parent"
+                      android:layout_height="161dp"
+                      android:hint="Description" />
+
+                  <EditText
+                      android:id="@+id/recipe"
+                      android:layout_width="match_parent"
+                      android:layout_height="256dp"
+                      android:hint="Recipe" />
+
+                  <Button
+                      android:id="@+id/addrecipetoarray"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Add recipe" />
+
+
+              </LinearLayout>
+
+
+
+
+
+
 
 
         </ScrollView>

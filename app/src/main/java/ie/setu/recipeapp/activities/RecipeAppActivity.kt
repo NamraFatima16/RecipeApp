@@ -27,6 +27,7 @@ class RecipeAppActivity : AppCompatActivity() {
         app = application as MainApp
         i("Recipe Activity started...")
         binding.addrecipebtn.setOnClickListener() {
+
             val launcherAdd = Intent(this, AddingRecipesActivity::class.java)
             startActivity(launcherAdd)}
 
